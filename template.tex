@@ -1,0 +1,85 @@
+\documentclass[a4paper,12pt]{jsreport}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{float}
+
+%%%%%%document start%%%%%%
+
+%%%%%%title page%%%%%%
+\begin{document}
+\begin{center}
+\thispagestyle{empty}
+{\Large 卒業論文}\\
+\vspace*{1cm}
+{\Huge 卒業論文　テンプレート}\\
+\vspace*{2cm}
+{\Large 関西学院大学 理工学部 情報科学科}\\
+\vspace*{0.5cm}
+{\LARGE 学籍番号 \ 名前}\\
+\vspace*{9cm}
+{\Large 2021年吉日}\\
+\vspace*{2cm}
+{\LARGE 指導教員 徳山豪 教授}
+\end{center}
+%%%%%%end title%%%%%%
+
+%%%%%%目次ページ(いじらないでください)%%%%%%
+\newpage
+\pagenumbering{arabic}
+\tableofcontents
+
+%%%%start main%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\chapter{はじめに}
+目次を作る際は\verb+\tableofcontents+ と打ちます.\\
+新しいページに区切るときは\verb+\newpage+ と打ちます.
+\section{セクション}
+\verb+\chapter+と打つことで第○章を作成することができます.\\
+○.○は\verb+\section+と打ちましょう. 同様にしてサブセクション, サブサブセクションも作成可能です.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{本文の書き方(数式や図の挿入)}
+\section{セクション}
+本文中に参考文献\cite{sample}のように挿入したいときは, \verb+\cite{著書名}+と打ちましょう.
+以下のようにして, 数式を挿入します. ”TeXコマンド一覧”と検索することで, コマンドの詳細を知ることができます.
+\begin{equation}
+Y=ax^3+bx^2+cx+d \\
+\end{equation}
+\begin{eqnarray}
+E[3^S] & = & \sum ^{N} _{k=0}{} _{N}\mathrm{C}_{k} \left( \frac{3}{9} \right)^{k} \left( \frac{8}{9} \right)^{N-k} \\
+       & = & \left( \frac{11}{9}\right)^N \\
+\end{eqnarray}
+\subsubsection{サブサブセクション}
+\begin{eqnarray}
+\int^\frac{\pi}{2} _0 \sin^4\theta \cos^2 \theta {\rm d} \theta &=& \frac{1}{2} \cdot 2 \int^\frac{\pi}{2} _0 \sin^{2 \cdot \frac{5}{2} -1}\theta \cos^{2 \cdot \frac{3}{2}-1} \theta {\rm d}\theta\\
+&=& \frac{1}{2} \cdot \rm B \left( \frac{5}{2} , \frac{3}{2} \right)\nonumber \\
+&=& \frac{\Gamma \left(\frac{5}{2} \right)\Gamma \left(\frac{3}{2} \right)}{2\cdot\Gamma \left( 4 \right)}\\
+&=& \frac{\frac{3}{2} \cdot \frac{1}{2} \cdot \sqrt{\pi} \cdot \frac{1}{2} \cdot \sqrt{\pi}}{2 \cdot 3! }  =  \frac{3 \cdot \pi}{2^5 \cdot 3}\nonumber \\
+&=& \frac{\pi}{32}
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%参考文献%%%%%%
+%参考文献はgrad.bibというファイルに書き込みます.%
+\bibliographystyle{junsrt}
+\bibliography{grad.bib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{付録}
+\verb+\chapter*+と打つことで、第○章をタイトルのみにすることができます.\\
+ここには研究・開発したプログラムのソースコード等を書きましょう.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{謝辞}
+ここに研究の謝辞．主にご協力いただいた方などを書きましょう.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%参考文献%%%%%%
+
+\end{document}
+
+%%%%%%document end%%%%%%
+
